@@ -1,3 +1,5 @@
+import org.vones.templates.Templates
+
 buildscript {
     repositories {
         google()
@@ -17,6 +19,8 @@ plugins {
     id("java-gradle-plugin")
     id("maven-publish")
 }
+
+apply<Templates>()
 
 group = "com.github.voneskuba"
 version = "0.1.0"
