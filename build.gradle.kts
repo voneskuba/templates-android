@@ -31,7 +31,7 @@ allprojects {
 gradlePlugin {
     plugins {
         create("copyTemplates") {
-            id = "templates-android"
+            id = "com.github.voneskuba.templates-android"
             implementationClass = "org.vones.templates.Templates"
         }
     }
