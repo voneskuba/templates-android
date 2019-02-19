@@ -19,7 +19,9 @@ plugins {
 }
 
 group = "com.github.voneskuba"
-version = "0.1.6"
+version = "0.1.7"
+
+apply<Templates>()
 
 allprojects {
     repositories {

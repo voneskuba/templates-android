@@ -1,11 +1,11 @@
-package org.vones.templates;
-
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
+import org.gradle.api.file.ConfigurableFileTree;
 import org.gradle.api.tasks.Copy;
 
 public class Templates implements Plugin<Project> {
 
+    private static final String FROM = "%s/templates";
     private static final String INTO = "/Applications/Android Studio.app/Contents/plugins/android/lib/templates/other/.";
 
     private final ClassLoader loader = getClass().getClassLoader();
