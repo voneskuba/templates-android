@@ -3,39 +3,21 @@ package org.vones.templates;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.tasks.Copy;
-import org.gradle.internal.impldep.com.esotericsoftware.minlog.Log;
 
 public class Templates implements Plugin<Project> {
 
+    private static final String FROM = "%s/templates";
+    private static final String INTO = "/Applications/Android Studio.app/Contents/plugins/android/lib/templates/other/.";
+
     @Override public void apply(Project project) {
-        project.getTasks().create("copyTemplates", Copy.class, t -> {
-            t.doLast(task -> {
-                Log.error("ERROR", "Test plugin");
+        project.getTasks().create("copyTemplates", Copy.class, task -> {
+            String from = String.format(FROM, project.getRootDir());
+            task.from(from, t -> t.include("**/"));
+            task.into(INTO);
+            task.doLast(t -> {
+                System.out.println("cp -af " + from + " " + INTO);
+                System.out.println("Templates copied");
             });
         });
     }
 }
-
-
-//open class Templates : Plugin<Project> {
-//
-//    private companion object {
-//        const val FROM = "%s/templates"
-//        const val INTO = "/Applications/Android Studio.app/Contents/plugins/android/lib/templates/other/."
-//    }
-//
-//    override fun apply(project: Project) {
-//        project.tasks.create("copyTemplates", Copy::class) {
-//            val from = String.format(FROM, project.rootDir)
-//            from(from) {
-//                include("**/")
-//        }
-//        into(INTO)
-//        doLast {
-//        println("cp -af $from $INTO")
-//        println("Templates copied")
-//        }
-//        }
-//        }
-//        }
-// */
