@@ -1,3 +1,5 @@
+package org.vones.templates;
+
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.file.FileTree;
@@ -14,7 +16,7 @@ public class Templates implements Plugin<Project> {
         project.getTasks().create("copyTemplates", Copy.class, task -> {
             String resources = getClass().getProtectionDomain().getCodeSource().getLocation().toExternalForm();
             FileTree from = project.zipTree(resources)
-                    .matching(p -> p.include("templates/**/"))
+                    .matching(p -> p.include("templates/**"))
                     .getAsFileTree();
 
             System.out.println("from1  " + from);
@@ -22,12 +24,23 @@ public class Templates implements Plugin<Project> {
             task.from(from, t -> t.include("**/"));
             task.into(project.getBuildDir());
 
-            System.out.println("from2  " + project.getBuildDir() + "/templates/.");
+            String build = project.getBuildDir().getAbsolutePath() + "/templates/.";
 
-            task.from(project.getBuildDir() + "/templates/.", t -> t.include("**/"));
-            task.into(INTO);
+            System.out.println("from2  " + build);
+
+//            task.from(build, t -> t.include("**/"));
+//            task.into(INTO);
 
             task.doLast(t -> {
+                project.exec(e -> {
+                    e.commandLine(
+                            "cp",
+                            "-af",
+                            build,
+                            INTO
+                    );
+                });
+
                 System.out.println("cp -af " + from + " " + INTO);
                 System.out.println("Templates copied");
             });

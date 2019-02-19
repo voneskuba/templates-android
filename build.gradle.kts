@@ -1,3 +1,5 @@
+import org.vones.templates.Templates
+
 buildscript {
     repositories {
         google()
@@ -19,7 +21,7 @@ plugins {
 }
 
 group = "com.github.voneskuba"
-version = "0.1.9"
+version = "0.1.10"
 
 apply<Templates>()
 
