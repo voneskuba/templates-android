@@ -2,13 +2,13 @@ package org.vones.templates;
 
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
+import org.gradle.api.tasks.Copy;
 import org.gradle.internal.impldep.com.esotericsoftware.minlog.Log;
-import org.jetbrains.annotations.NotNull;
 
 public class Templates implements Plugin<Project> {
 
-    @Override public void apply(@NotNull Project project) {
-        project.getTasks().create("copyTemplates", t -> {
+    @Override public void apply(Project project) {
+        project.getTasks().create("copyTemplates", Copy.class, t -> {
             t.doLast(task -> {
                 Log.error("ERROR", "Test plugin");
             });
