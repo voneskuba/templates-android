@@ -19,7 +19,7 @@ plugins {
 }
 
 group = "com.github.voneskuba"
-version = "0.1.4"
+version = "0.1.5"
 
 allprojects {
     repositories {
