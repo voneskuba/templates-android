@@ -19,12 +19,14 @@ public class Templates implements Plugin<Project> {
                     .matching(p -> p.include("templates/**/"))
                     .getAsFileTree();
 
-            System.out.println("from  " + from);
+            System.out.println("from1  " + from);
 
             task.from(from, t -> t.include("**/"));
             task.into(project.getBuildDir());
 
-            task.from(project.getBuildDir() + "/templates", t -> t.include("**/"));
+            System.out.println("from2  " + project.getBuildDir() + "/templates/.");
+
+            task.from(project.getBuildDir() + "/templates/.", t -> t.include("**/"));
             task.into(INTO);
 
             task.doLast(t -> {
