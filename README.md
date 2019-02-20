@@ -17,3 +17,5 @@ pluginManagement {
     }
 }
 ```
+
+Execute gradle task `copyTempaltes`
