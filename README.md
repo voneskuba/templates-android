@@ -18,4 +18,4 @@ pluginManagement {
 }
 ```
 
-Execute gradle task `copyTempaltes`
+Execute gradle task `copyTemplates`
