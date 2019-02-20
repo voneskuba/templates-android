@@ -31,7 +31,7 @@ public class Templates implements Plugin<Project> {
                     e.commandLine(
                             "bash",
                             "-c",
-                            "ps -ax | grep --only-matching '/[A-Za-z/]*/[Aa]ndroid[ -][Ss]tudio[ 0-9A-Za-z.()]*/\\(Contents\\)\\?' | sort --unique"
+                            "ps -ax | grep --only-matching '/[A-Za-z/]*/[Aa]ndroid[ -][Ss]tudio[ 0-9A-Za-z.()]*\\(/Contents\\)\\?' | sort --unique"
                     );
                     e.setStandardOutput(out);
                 });
