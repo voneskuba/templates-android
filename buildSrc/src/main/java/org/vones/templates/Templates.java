@@ -11,6 +11,8 @@ public class Templates implements Plugin<Project> {
 
     @Override public void apply(Project project) {
         project.getTasks().create("copyTemplates", Copy.class, task -> {
+            task.setGroup("The FUNTASTY");
+
             String resources = getClass().getProtectionDomain().getCodeSource().getLocation().toExternalForm();
             FileTree from = project.zipTree(resources)
                     .matching(p -> p.include("templates/**"))
