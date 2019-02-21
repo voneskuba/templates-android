@@ -21,7 +21,7 @@ plugins {
 }
 
 group = "com.github.voneskuba"
-version = "0.2.1"
+version = "0.2.2"
 
 apply<Templates>()
 
