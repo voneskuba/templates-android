@@ -26,6 +26,8 @@ public class Templates implements Plugin<Project> {
             copyToBuildDir(task, project);
 
             task.doLast(t -> {
+                System.out.println("Templates " + project.getVersion());
+
                 List<String> paths = getAndroidStudioVersions(project);
                 List<String> templates = getRousourceFolders(project);
 
@@ -87,7 +89,7 @@ public class Templates implements Plugin<Project> {
             e.setStandardOutput(out);
         });
 
-        List<String> lines = new ArrayList(Arrays.asList(out.toString().split("[\\r\\n]+")));
+        List<String> lines = new ArrayList<>(Arrays.asList(out.toString().split("[\\r\\n]+")));
         lines.removeAll(Arrays.asList("", null));
 
         return lines;
@@ -110,7 +112,7 @@ public class Templates implements Plugin<Project> {
             e.setStandardOutput(out);
         });
 
-        List<String> lines = new ArrayList(Arrays.asList(out.toString().split("[\\r\\n\\t ]+")));
+        List<String> lines = new ArrayList<>(Arrays.asList(out.toString().split("[\\r\\n\\t ]+")));
         lines.removeAll(Arrays.asList("", null));
 
         return lines;
