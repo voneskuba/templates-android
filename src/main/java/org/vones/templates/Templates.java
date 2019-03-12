@@ -124,7 +124,14 @@ public class Templates implements Plugin<Project> {
      * @param project   {@link Project}
      */
     private void removeOldTemplatesFromAndroidStudio(String path, List<String> templates, Project project) {
-        // TODO
+        for (String template : templates) {
+            String deletePath = path + AS_TEMPLATES + "/" + template;
+            project.exec(e -> e.commandLine(
+                    "rm",
+                    "-rf",
+                    deletePath
+            ));
+        }
     }
 
     /**
