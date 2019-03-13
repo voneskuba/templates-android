@@ -26,7 +26,7 @@ public class Templates implements Plugin<Project> {
             copyToBuildDir(task, project);
 
             task.doLast(t -> {
-                System.out.println("Templates " + project.getVersion());
+                System.out.println("Copy templates");
 
                 List<String> paths = getAndroidStudioVersions(project);
                 List<String> templates = getRousourceFolders(project);
