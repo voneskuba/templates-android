@@ -20,9 +20,6 @@ plugins {
 //    id(ProjectSettings.Templates.id) version ProjectSettings.version
 }
 
-group = ProjectSettings.group
-version = ProjectSettings.version
-
 allprojects {
     repositories {
         google()
