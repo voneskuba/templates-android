@@ -4,7 +4,7 @@
 
 Add to plugins:
 ```
-id("com.github.voneskuba.templates-android") version "0.5.2"
+id("com.github.voneskuba.templates-android") version "0.5.3"
 ```
 
 Add to settings.gradle.kts:
