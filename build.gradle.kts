@@ -17,7 +17,7 @@ buildscript {
 
 plugins {
     idea
-    //id(ProjectSettings.Templates.id) version ProjectSettings.version
+//    id(ProjectSettings.Templates.id) version ProjectSettings.version
 }
 
 group = ProjectSettings.group
