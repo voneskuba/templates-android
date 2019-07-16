@@ -1,3 +1,5 @@
+import org.vones.templates.Templates
+
 buildscript {
     repositories {
         google()
@@ -19,8 +21,10 @@ plugins {
     idea
     id("java-gradle-plugin")
     id("maven-publish")
-    //id(ProjectSettings.Templates.id) version ProjectSettings.version
+//    id(ProjectSettings.Templates.id) version ProjectSettings.version
 }
+
+apply<Templates>()
 
 group = ProjectSettings.group
 version = ProjectSettings.version

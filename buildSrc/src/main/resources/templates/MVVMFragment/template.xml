@@ -18,6 +18,13 @@
         id="className"
         type="string"/>
 
+    <parameter
+        name="Navigation components"
+        default="true"
+        help="The fragment will be used for navigation components"
+        id="isNavComponents"
+        type="boolean" />
+
     <globals file="globals.xml.ftl"/>
     <execute file="recipe.xml.ftl"/>
 
