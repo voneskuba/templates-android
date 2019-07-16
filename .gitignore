@@ -6,5 +6,6 @@
 /build
 /plugins/build
 /buildSrc/build
+/templates/build
 /captures
 .externalNativeBuild

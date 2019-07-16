@@ -6,5 +6,5 @@ object Versions {
     const val androidMaven = "1.4.1"
 
     // kotlin
-    const val kotlin = "1.3.21"
+    const val kotlin = "1.3.20"
 }

@@ -1,5 +1,3 @@
-import org.vones.templates.Templates
-
 buildscript {
     repositories {
         google()
@@ -7,7 +5,7 @@ buildscript {
         mavenCentral()
         maven { setUrl("https://jitpack.io") }
         flatDir {
-            dirs("build/libs")
+            dirs("templates/build/libs")
         }
     }
     dependencies {
@@ -19,15 +17,8 @@ buildscript {
 
 plugins {
     idea
-    id("java-gradle-plugin")
-    id("maven-publish")
-//    id(ProjectSettings.Templates.id) version ProjectSettings.version
+    //id(ProjectSettings.Templates.id) version ProjectSettings.version
 }
-
-apply<Templates>()
-
-group = ProjectSettings.group
-version = ProjectSettings.version
 
 allprojects {
     repositories {
@@ -35,14 +26,5 @@ allprojects {
         jcenter()
         mavenCentral()
         maven { setUrl("https://jitpack.io") }
-    }
-}
-
-gradlePlugin {
-    plugins {
-        create(ProjectSettings.Templates.name) {
-            id = ProjectSettings.Templates.id
-            implementationClass = ProjectSettings.Templates.implementationClass
-        }
     }
 }

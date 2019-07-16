@@ -1,10 +1,12 @@
 rootProject.name = "templates-android"
 rootProject.buildFileName = "build.gradle.kts"
 
+include(":templates")
+
 pluginManagement {
     repositories {
         flatDir {
-            dirs("build/libs")
+            dirs("templates/build/libs")
         }
         gradlePluginPortal()
     }
