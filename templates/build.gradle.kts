@@ -4,6 +4,8 @@ plugins {
     id("maven-publish")
 }
 
+project.setProperty("archivesBaseName", ProjectSettings.Templates.module)
+
 group = ProjectSettings.group
 version = ProjectSettings.version
 
