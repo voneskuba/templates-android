@@ -5,10 +5,12 @@ include(":templates")
 
 pluginManagement {
     repositories {
+        mavenCentral()
+        maven { setUrl("https://jitpack.io") }
+        gradlePluginPortal()
         flatDir {
             dirs("templates/build/libs")
         }
-        gradlePluginPortal()
     }
     resolutionStrategy {
         eachPlugin {

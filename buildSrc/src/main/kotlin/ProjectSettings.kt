@@ -1,11 +1,11 @@
 object ProjectSettings {
 
     const val group = "com.github.voneskuba"
-    const val version = "0.5.5"
+    const val version = "0.5.6"
 
     object Templates {
-        const val module = "templates"
-        const val id = "$group.$module-android"
+        const val module = "templates-android" // TODO jar name
+        const val id = "$group.$module"
         const val name = "copyTemplates"
         const val implementationClass = "org.vones.templates.Templates"
     }
