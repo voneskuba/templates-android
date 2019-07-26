@@ -1,7 +1,7 @@
 object ProjectSettings {
 
     const val group = "com.github.voneskuba"
-    const val version = "0.7.0"
+    const val version = "0.8.0"
 
     object Templates {
         const val module = "templates-android"
