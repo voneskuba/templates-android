@@ -7,9 +7,11 @@ import javax.inject.Inject
 
 class ${className}Fragment : BaseBindingFragment<${className}ViewModel, ${className}ViewState, Fragment${className}Binding>(), ${className}View {
 
+    <#if !isNavComponents>
     companion object {
         fun newInstance(): ${className}Fragment = ${className}Fragment()
     }
+    </#if>
 
     @Inject override lateinit var viewModelFactory: ${className}ViewModelFactory
 
